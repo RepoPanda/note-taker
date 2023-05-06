@@ -1,9 +1,12 @@
-const express = require('express');
-const path = require('path');
-const api = require('./routes/api-routes.js');
+// imports
+const express = require('express'); // import express
+const path = require('path'); // import path
+const api = require('./routes/api-routes.js'); // import api routes
 
+// set port
 const PORT = process.env.PORT || 3001;
 
+// instantiate express
 const app = express();
 
 // Middleware for parsing JSON and urlencoded form data
