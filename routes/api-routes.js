@@ -1,5 +1,8 @@
+// import router
 const router = require('express').Router();
+// import helper functions from fsUtils.js
 const { readAndAppend, readFromFile, readAndRemove } = require('../helpers/fsUtils');
+// import universal unique ID (uuid)
 const uuid = require('../helpers/uuid');
 
 // GET Route for retrieving all the feedback
@@ -20,7 +23,7 @@ router.post('/notes', (req, res) => {
       text,
       id: uuid(),
     };
-
+    // add new note to db.json
     readAndAppend(newNote, './db/db.json');
 
     const response = {
@@ -40,4 +43,4 @@ router.delete('/notes/:id' , (req, res) => {
   res.json('Your Note has been deleted');
 
 })
-module.exports = router;
+module.exports = router; // export router
